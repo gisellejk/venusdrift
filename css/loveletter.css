@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   width: 100%;
+  height: 100vh;
+}
+
+#background {
+
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #738fbd, #a8c3d4, #dbd6df, #eec6c7, #db88a4, #cc8eb1 );
+}
+
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    animation: twinkle 2s infinite ease-in-out;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+}
+
+.s1  { 
+    top: 10%;  
+    left: 20%; 
+    animation-delay: 0s; 
+}
+.s2  { 
+    top: 25%;  
+    left: 40%; 
+    animation-delay: 0.3s; 
+}
+.s3  { 
+    top: 35%;  
+    left: 75%; 
+    animation-delay: 0.5s; 
+}
+.s4  { 
+    top: 60%;  
+    left: 30%; 
+    animation-delay: 0.7s; 
+}
+.s5  { 
+    top: 80%;  
+    left: 50%; 
+    animation-delay: 1s; 
+}
+.s6  { 
+    top: 15%;  
+    left: 60%; 
+    animation-delay: 1.3s; 
+}
+.s7  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 1.6s; 
+}
+.s8  { 
+    top: 55%;  
+    left: 10%; 
+    animation-delay: 1.9s; 
+}
+.s9  { 
+    top: 75%;  
+    left: 80%; 
+    animation-delay: 2.2s; 
+}
+.s10 { 
+    top: 5%;   
+    left: 50%; 
+  animation-delay: 2.5s; 
+}
+.s11  { 
+    top: 20%;  
+    left: 30%; 
+    animation-delay: 0s; 
+}
+.s12  { 
+    top: 35%;  
+    left: 50%; 
+    animation-delay: 0.3s; 
+}
+.s13  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 0.5s; 
+}
+.s14  { 
+    top: 70%;  
+    left: 40%; 
+    animation-delay: 0.7s; 
+}
+.s15  { 
+    top: 90%;  
+    left: 60%; 
+    animation-delay: 1s; 
+}
+.s16  { 
+    top: 25%;  
+    left: 70%; 
+    animation-delay: 1.3s; 
+}
+.s17  { 
+    top: 55%;  
+    left: 95%; 
+    animation-delay: 1.6s; 
+}
+.s18  { 
+    top: 65%;  
+    left: 20%; 
+    animation-delay: 1.9s; 
+}
+.s19  { 
+    top: 85%;  
+    left: 90%; 
+    animation-delay: 2.2s; 
+}
+.s20 { 
+    top: 10%;   
+    left: 60%; 
+    animation-delay: 2.5s; 
+}
+
+section {
+
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding: 40px 0; */
+    font-family: 'Dancing Script', cursive;
+    }
+
+.cloud{
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+a {
+    padding: 10px 28px;
+    background: #ffd1e3;
+    color: #a64d79;
+    border-radius: 12px 20px 14px 10px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px #f8a6c1;
+    transition: background 0.2s, color 0.2s;
+    text-align: center;
+}
+a:hover {
+  background: #f8a6c1;
+  color: #fff;
+}
+
+.cloud h1{
+    color: #a64d79;
+    /* margin-right: 400px; */
+    font-size: 3rem;
+}
+
+.notes-container {
+    width: 100%;
+    height: 300px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+
+    margin-bottom: 80px;
+    
+}
+
+.note {
+    background: #ffd1e3;
+    color: #a64d79;
+    width: 220px;
+    min-height: 180px;
+    padding: 24px 20px 20px 24px;
+    border-radius: 18px 30px 22px 16px;
+    box-shadow: 0 6px 24px 0 rgba(255, 182, 193, 0.25), 0 2px 8px 0 #f8a6c1;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+    position: relative;
+    transform: rotate(-2deg);
+    transition: transform 0.2s;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+.note:nth-child(2n) { transform: rotate(2.5deg); background: #ffe6f2; }
+.note:nth-child(3n) { transform: rotate(-3deg); background: #ffeaf7; }
+.note:before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 40px; height: 8px;
+    background: #fff3fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #f8a6c1;
+    opacity: 0.7;
+}
+
+.note .author {
+    display: block;
+    margin-top: 18px;
+    font-size: 0.95em;
+    color: #c06c84;
+    text-align: right;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.note:hover {
+    transform: scale(1.04) rotate(0deg);
+    z-index: 2;
+    box-shadow: 0 12px 32px 0 rgba(255, 182, 193, 0.35), 0 4px 12px 0 #f8a6c1;
+}
+
+ .add-note-form {
+    width: 600px;
+    height: 70px;
+      /* margin: 40px auto 0 auto; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    
+}
+
+.add-note-form textarea {
+    width: 100%;
+    min-height: 80px;
+    border-radius: 14px 24px 18px 10px;
+    border: none;
+    background: #ffeaf7;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+    padding: 16px;
+    color: #a64d79;
+    box-shadow: 0 2px 8px #f8a6c1;
+    resize: vertical;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.add-note-form textarea:focus {
+    box-shadow: 0 4px 16px #f8a6c1;
+}
+
+.add-note-form button {
+    background: #ffd1e3;
+    color: #a64d79;
+    border: none;
+    border-radius: 8px 16px 10px 8px;
+    padding: 10px 28px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #f8a6c1;
+    transition: background 0.2s, color 0.2s;
+}
+
+.add-note-form button:hover {
+    background: #f8a6c1;
+    color: #fff;
+}
+
+.note {
+    position: relative;
+  /* ...your existing styles... */
+}
+
+.note-heart {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-size: 1.3em;
+  color: #f672a7;
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.note-heart:hover {
+  transform: scale(1.2) rotate(-10deg);
+  opacity: 1;
+  color: #e6397e;
+}
+
+.fa-circle-user{
+    font-size: 1.5rem;
+}
+
+

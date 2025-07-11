@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Petit+Formal+Script&family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Petit+Formal+Script&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+body{
+     font-family: "Petit Formal Script", cursive;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#loading-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0ef 0%, #b8c6e7 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  animation: overlayFadeOut 1s 4.5s forwards;
+}
+
+@keyframes overlayFadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #ffd1e3;
+    border-top: 8px solid #a6b8e7;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite, fadeOut 1s 2.5s forwards;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 24px #f8a6c1;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+.loading-text {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2rem;
+    color: #d16ba5;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    opacity: 1;
+    animation: fadeOut 1s 2.5s forwards;
+}
+.welcome {
+    /* Remove these: */
+    /* height: 150px; */
+    /* padding-bottom: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Petit+Formal+Script&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a64d79;
+    letter-spacing: 4px;
+    opacity: 0;
+    text-align: center;
+    line-height: 1.1;
+    transform: translateY(40px) scale(0.95);
+    animation: welcomeIn 3.2s 3.2s forwards cubic-bezier(.4,2,.6,1);
+    text-shadow: 0 6px 32px #ffd1e3, 0 2px 12px #f8a6c1;
+    background: linear-gradient(90deg, #d16ba5 30%, #fbb1b1 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+    
+@keyframes welcomeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(200px) scale(0.95);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-100px) scale(1.05);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(200px) scale(1);
+    }
+}
+#background {
+
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #738fbd, #a8c3d4, #dbd6df, #eec6c7, #db88a4, #cc8eb1 );
+}
+
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    animation: twinkle 2s infinite ease-in-out;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+}
+
+.s1  { 
+    top: 10%;  
+    left: 20%; 
+    animation-delay: 0s; 
+}
+.s2  { 
+    top: 25%;  
+    left: 40%; 
+    animation-delay: 0.3s; 
+}
+.s3  { 
+    top: 35%;  
+    left: 75%; 
+    animation-delay: 0.5s; 
+}
+.s4  { 
+    top: 60%;  
+    left: 30%; 
+    animation-delay: 0.7s; 
+}
+.s5  { 
+    top: 80%;  
+    left: 50%; 
+    animation-delay: 1s; 
+}
+.s6  { 
+    top: 15%;  
+    left: 60%; 
+    animation-delay: 1.3s; 
+}
+.s7  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 1.6s; 
+}
+.s8  { 
+    top: 55%;  
+    left: 10%; 
+    animation-delay: 1.9s; 
+}
+.s9  { 
+    top: 75%;  
+    left: 80%; 
+    animation-delay: 2.2s; 
+}
+.s10 { 
+    top: 5%;   
+    left: 50%; 
+  animation-delay: 2.5s; 
+}
+.s11  { 
+    top: 20%;  
+    left: 30%; 
+    animation-delay: 0s; 
+}
+.s12  { 
+    top: 35%;  
+    left: 50%; 
+    animation-delay: 0.3s; 
+}
+.s13  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 0.5s; 
+}
+.s14  { 
+    top: 70%;  
+    left: 40%; 
+    animation-delay: 0.7s; 
+}
+.s15  { 
+    top: 90%;  
+    left: 60%; 
+    animation-delay: 1s; 
+}
+.s16  { 
+    top: 25%;  
+    left: 70%; 
+    animation-delay: 1.3s; 
+}
+.s17  { 
+    top: 55%;  
+    left: 95%; 
+    animation-delay: 1.6s; 
+}
+.s18  { 
+    top: 65%;  
+    left: 20%; 
+    animation-delay: 1.9s; 
+}
+.s19  { 
+    top: 85%;  
+    left: 90%; 
+    animation-delay: 2.2s; 
+}
+.s20 { 
+    top: 10%;   
+    left: 60%; 
+    animation-delay: 2.5s; 
+}
+
+  /* ☁️ Clouds */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    opacity: 0.8;
+    animation: shakeCloud 6s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+@keyframes shakeCloud {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+}
+
+  /* Cloud styles */
+.cloud1 { 
+    top: 15%; 
+    left: 10%; 
+    width: 120px; 
+    height: 60px; 
+    animation-delay: 0s; 
+}
+.cloud1::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -20px; 
+    left: 20px; 
+}
+.cloud1::after  { 
+    width: 80px; 
+    height: 80px; 
+    top: -30px; 
+    left: 60px; 
+}
+
+
+
+
+.cloud3 { 
+    top: 15%; 
+    left: 75%; 
+    width: 130px; 
+    height: 65px; 
+    animation-delay: 1s; 
+}
+.cloud3::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -15px; 
+    left: 25px; 
+}
+.cloud3::after  { 
+    width: 85px; 
+    height: 85px; 
+    top: -25px; 
+    left: 65px; 
+}
+
+
+  /* Content container on top */
+#container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container .title{
+    width: 75%;
+    height: 15vh;
+
+
+    display: flex;
+    align-items: center;
+}
+
+#container .title img {
+    width: 100px;
+    height: 100px;
+}
+
+#container .title h1 {
+    font-family: "Petit Formal Script", cursive;
+    font-weight: bold;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    font-size: 2rem;
+    color: #e388a8;
+}
+
+#container .cloudRealm{
+    width: 80%;
+    height: 40vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#container #cloudRealm{
+  width: 650px;
+}
+
+#container .cloudRealm .cloudRealm1{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+#container .cloudRealm .cloudRealm1:hover, .cloudRealm2:hover{
+    z-index: 2; /* ensures it appears above others */   
+  transform: scale(1.1);
+  transition: all 0.5s ease-in;
+}
+
+#container .cloudRealm .cloudRealm1 img, .cloudRealm2 img{
+    height: 250px;
+    position: relative;
+    animation: shakeCloud 4s ease-in-out infinite;
+}
+
+#container .cloudRealm .cloudRealm1 img:hover{
+    cursor: pointer;
+}
+
+#container .cloudRealm .cloudRealm1 h1, .cloudRealm2 h1{
+    width: 100px;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-family: "Petit Formal Script", cursive;
+    font-size: 1.2rem;
+    color: #738fbd;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    animation: shakeCloud 4s ease-in-out infinite;
+}
+
+#container .cloudRealm #cloud1 h1{
+  margin-top: 10px;
+}
+
+#container .cloudRealm #cloud2 h1{
+    color: #db88a4;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#container .cloudRealm #cloud3 h1{
+    color: #a7ec94;
+    margin-top: 10px;
+}
+
+#container .cloudRealm #cloud4 h1{
+  color: #dce78b;
+  margin-top: 10px;
+}
+
+#container .cloudRealm #cloud5 h1{
+  color: #b973bd;
+  margin-top: 10px;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar .starTwink {
+    color: #738fbd;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star02{
+  color: #db88a4;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star03{
+  color: #a7ec94;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star04{
+  color: #dce78b;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star05{
+  color: #b973bd;
+}
+
+/* #container .cloudRealm .cloudRealm1 img:hover .appearstar .starTwink {
+  transform: translate(45deg) scale(4);
+  opacity: 1;
+} */
+
+/* .starTwink:nth-child(1) { 
+    top: 35%; 
+    left: 45%; 
+  } */
+.starTwink:nth-child(1) { 
+    top: 25%; 
+    left: 50%; 
+  }
+.starTwink:nth-child(2) { 
+    top: 22%; 
+    left: 55%; 
+  }
+.starTwink:nth-child(3) { 
+    top: 25%; 
+    left: 60%; 
+  }
+.starTwink:nth-child(4) { 
+    top: 23%; 
+    left: 65%; 
+  }
+.starTwink:nth-child(5) { 
+    top: 25%; 
+    left: 70%; 
+  }
+
+.cloudRealm1:hover .starTwink {
+  animation: sparkle 2s ease forwards;
+  opacity: 1;
+  color: #db88a4;
+}
+
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+a:hover, h1:hover{
+    cursor: pointer;
+}
+
+
+
+
+

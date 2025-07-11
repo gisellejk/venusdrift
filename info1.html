@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus Drift</title>
+      <link rel="icon" type="image/webp" href="img/venusdrift.webp">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(to bottom, #b0eff7, #f3c0d1);
+            /* background: linear-gradient(135deg, #a7f3d0 0%, #fbb6ce 50%, #ddd6fe 100%); */
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header-line {
+            width: 8rem;
+            height: 4px;
+            background: #4b5563;
+            margin: 0 auto 1.5rem;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #4b5563;
+            letter-spacing: 0.05em;
+        }
+
+        .form-grid {
+            /* background-color: #06b6d4; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(244, 114, 182, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .field {
+            margin-bottom: 1.5rem;
+        }
+
+        .label {
+            display: block;
+            color: #ec4899;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .label-cyan {
+            color: #ec4899;
+        }
+
+        .input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        .input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            color: #374151;
+            min-height: 6rem;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-radio {
+            display: none;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.8);
+            color: #ec4899;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-radio:checked + .btn {
+            background: #ec4899;
+            color: white;
+        }
+
+        .btn-radio:checked + .btn-cyan {
+            background: #06b6d4;
+            color: white;
+        }
+
+        .btn-cyan {
+            color: #06b6d4;
+        }
+
+        .motivation {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .motivation-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4b5563;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .motivation-text {
+            color: #6b7280;
+        }
+
+        .motivation-text p {
+            margin-bottom: 0.5rem;
+        }
+
+        .motivation-text p:first-child {
+            font-weight: 500;
+        }
+
+        .submit-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .submit-btn {
+            background: #ec4899;
+            color: white;
+            border: none;
+            padding: 1.5rem 3rem;
+            border-radius: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #db2777;
+        }
+
+        @media (max-width: 1024px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .motivation-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .card, .motivation {
+                padding: 1.5rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+
+            
+        }
+
+        .submit-wrapper a{
+                text-decoration: none;
+                padding: 20px;
+                font-size: 1.2rem;
+                background-color: #ec4899;
+                border-radius: 20px;
+                color: #fff;
+            }
+
+        .submit-wrapper a:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-line"></div>
+            <h1 class="title">Venus Drift</h1>
+        </header>
+
+        <form class="form-grid">
+            <!-- Self-identification Card -->
+            <div class="card">
+                <h2 class="card-title">Self-identification</h2>
+
+                <div class="field">
+                    <label class="label">Gender :</label>
+                    <div class="btn-group">
+                        <input type="radio" name="gender" value="male" class="btn-radio" id="male">
+                        <label for="male" class="btn btn-cyan">
+                            <span>👤</span> ♂
+                        </label>
+                        
+                        <input type="radio" name="gender" value="female" class="btn-radio" id="female">
+                        <label for="female" class="btn">
+                            <span>👤</span> ♀
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="age">Age :</label>
+                    <input type="number" name="age" id="age" class="input" placeholder="Enter your age" max="40" min="16">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="location">Location :</label>
+                    <input type="text" name="location" id="location" class="input" placeholder="Enter your location" autocomplete="off">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="love-language">Role :</label>
+                    <input type="text" name="love-language" id="love-language" class="input" placeholder="your role..">
+                    <!-- <div class="btn-group">
+                        <input type="radio" name="role" value="developer" class="btn-radio" id="developer">
+                        <label for="developer" class="btn">Developer</label>
+                        
+                        <input type="radio" name="role" value="designer" class="btn-radio" id="designer">
+                        <label for="designer" class="btn">Designer</label>
+                    </div> -->
+                </div>
+
+                <div class="field">
+                    <label class="label label-cyan" for="note">Note :</label>
+                    <textarea name="note" id="note" class="textarea" placeholder="Add a personal note..."></textarea>
+                </div>
+            </div>
+
+            <!-- Preferences Card -->
+            <div class="card">
+                <div class="field">
+                    <label class="label">Personality :</label>
+                    <div class="btn-group">
+                        <input type="radio" name="personality" value="introvert" class="btn-radio" id="introvert">
+                        <label for="introvert" class="btn">Introvert</label>
+                        
+                        <input type="radio" name="personality" value="extrovert" class="btn-radio" id="extrovert">
+                        <label for="extrovert" class="btn">Extrovert</label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="hobby">Hobby , Lifestyle :</label>
+                    <input type="text" name="hobby" id="hobby" class="input" placeholder="Describe your hobbies and lifestyle">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="goal">Future Goal in 5 years :</label>
+                    <input type="text" name="goal" id="goal" class="input" placeholder="What are your future aspirations?">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="love-language">Your Love language :</label>
+                    <input type="text" name="love-language" id="love-language" class="input" placeholder="How do you express and receive love?">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="compatibility">Sexual Compatibility :</label>
+                    <input type="text" name="compatibility" id="compatibility" class="input" placeholder="Describe your preferences">
+                </div>
+
+                <div class="field">
+                    <label class="label" for="experience">Zodiac :</label>
+                    <input type="text" name="experience" id="experience" class="input" placeholder="Share your zodiac..">
+                </div>
+            </div>
+
+            <!-- Motivation & Submit -->
+            <div>
+                <div class="motivation">
+                    <h2 class="motivation-title">
+                        Fall in Love,<br>
+                        Date &<br>
+                        Have fun!
+                    </h2>
+                    <div class="motivation-text">
+                        <p>This is important to remember.</p>
+                        <p>Love isn't like pie.</p>
+                        <p>You don't need to divide it.</p>
+                    </div>
+                </div>
+
+                <div class="submit-wrapper">
+                    <a href="information.html">Submit</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

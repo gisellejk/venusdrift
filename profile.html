@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Venus Drift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sevillana&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="icon" type="image/webp" href="img/venusdrift.webp">
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Petit+Formal+Script&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+    body {
+    background: linear-gradient(to bottom, #b0eff7, #f3c0d1);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+
+    #background {
+
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    animation: twinkle 2s infinite ease-in-out;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+}
+
+.s1  { 
+    top: 10%;  
+    left: 20%; 
+    animation-delay: 0s; 
+}
+.s2  { 
+    top: 25%;  
+    left: 40%; 
+    animation-delay: 0.3s; 
+}
+.s3  { 
+    top: 35%;  
+    left: 75%; 
+    animation-delay: 0.5s; 
+}
+.s4  { 
+    top: 60%;  
+    left: 30%; 
+    animation-delay: 0.7s; 
+}
+.s5  { 
+    top: 80%;  
+    left: 50%; 
+    animation-delay: 1s; 
+}
+.s6  { 
+    top: 15%;  
+    left: 60%; 
+    animation-delay: 1.3s; 
+}
+.s7  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 1.6s; 
+}
+.s8  { 
+    top: 55%;  
+    left: 10%; 
+    animation-delay: 1.9s; 
+}
+.s9  { 
+    top: 75%;  
+    left: 80%; 
+    animation-delay: 2.2s; 
+}
+.s10 { 
+    top: 5%;   
+    left: 50%; 
+  animation-delay: 2.5s; 
+}
+.s11  { 
+    top: 20%;  
+    left: 30%; 
+    animation-delay: 0s; 
+}
+.s12  { 
+    top: 35%;  
+    left: 50%; 
+    animation-delay: 0.3s; 
+}
+.s13  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 0.5s; 
+}
+.s14  { 
+    top: 70%;  
+    left: 40%; 
+    animation-delay: 0.7s; 
+}
+.s15  { 
+    top: 90%;  
+    left: 60%; 
+    animation-delay: 1s; 
+}
+.s16  { 
+    top: 25%;  
+    left: 70%; 
+    animation-delay: 1.3s; 
+}
+.s17  { 
+    top: 55%;  
+    left: 95%; 
+    animation-delay: 1.6s; 
+}
+.s18  { 
+    top: 65%;  
+    left: 20%; 
+    animation-delay: 1.9s; 
+}
+.s19  { 
+    top: 85%;  
+    left: 90%; 
+    animation-delay: 2.2s; 
+}
+.s20 { 
+    top: 10%;   
+    left: 60%; 
+    animation-delay: 2.5s; 
+}
+
+  /* ☁️ Clouds */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    opacity: 0.8;
+    animation: shakeCloud 6s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+@keyframes shakeCloud {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+}
+
+  /* Cloud styles */
+.cloud1 { 
+    top: 15%; 
+    left: 10%; 
+    width: 120px; 
+    height: 60px; 
+    animation-delay: 0s; 
+}
+.cloud1::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -20px; 
+    left: 20px; 
+}
+.cloud1::after  { 
+    width: 80px; 
+    height: 80px; 
+    top: -30px; 
+    left: 60px; 
+}
+
+
+.cloud2 { 
+    top: 15%; 
+    left: 40%; 
+    width: 100px; 
+    height: 50px; 
+    animation-delay: 0.5s; 
+}
+.cloud2::before { 
+    width: 50px; 
+    height: 50px; 
+    top: -10px; 
+    left: 15px; 
+}
+.cloud2::after  { 
+    width: 70px; 
+    height: 70px; 
+    top: -20px; 
+    left: 45px; 
+}
+
+.cloud3 { 
+    top: 15%; 
+    left: 75%; 
+    width: 130px; 
+    height: 65px; 
+    animation-delay: 1s; 
+}
+.cloud3::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -15px; 
+    left: 25px; 
+}
+.cloud3::after  { 
+    width: 85px; 
+    height: 85px; 
+    top: -25px; 
+    left: 65px; 
+}
+
+.cloud4 { 
+    top: 30%; 
+    left: 20%; 
+    width: 110px; 
+    height: 55px; 
+    animation-delay: 1.5s; 
+}
+
+.cloud4::before { 
+    width: 55px; 
+    height: 55px; 
+    top: -10px; 
+    left: 20px; 
+}
+
+.cloud4::after  { 
+    width: 75px; 
+    height: 75px; 
+    top: -20px; 
+    left: 50px; 
+}
+
+.cloud5 { 
+    top: 30%; 
+    left: 60%; 
+    width: 140px; 
+    height: 70px; 
+    animation-delay: 2s; 
+}
+
+.cloud5::before { 
+    width: 70px; 
+    height: 70px; 
+    top: -15px; 
+    left: 30px; 
+}
+
+.cloud5::after  { 
+    width: 90px; 
+    height: 90px; 
+    top: -25px; 
+    left: 70px; 
+}
+
+.cloud6 { 
+    top: 50%; 
+    left: 15%; 
+    width: 120px; 
+    height: 60px; 
+    animation-delay: 2.5s; 
+}
+
+.cloud6::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -20px; 
+    left: 20px; 
+}
+
+.cloud6::after  { 
+    width: 80px; 
+    height: 80px; 
+    top: -30px; 
+    left: 60px; 
+}
+
+.cloud7 { 
+    top: 50%; 
+    left: 70%; 
+    width: 130px; 
+    height: 65px; 
+    animation-delay: 3s; 
+}
+
+.cloud7::before { 
+    width: 65px; 
+    height: 65px; 
+    top: -15px; 
+    left: 25px; 
+}
+
+.cloud7::after  { 
+    width: 85px; 
+    height: 85px; 
+    top: -25px; 
+    left: 55px; 
+}
+
+.cloud8 { 
+    top: 70%; 
+    left: 25%; 
+    width: 110px; 
+    height: 55px; 
+    animation-delay: 3.5s; 
+}
+
+.cloud8::before { 
+    width: 55px; 
+    height: 55px; 
+    top: -10px; 
+    left: 20px; 
+}
+
+.cloud8::after  { 
+    width: 75px; 
+    height: 75px; 
+    top: -20px; 
+    left: 45px; 
+}
+
+.cloud9 { 
+    top: 70%; 
+    left: 80%; 
+    width: 140px; 
+    height: 70px; 
+    animation-delay: 4s; 
+}
+
+.cloud9::before { 
+    width: 70px; 
+    height: 70px; 
+    top: -15px; 
+    left: 30px; 
+}
+
+.cloud9::after  { 
+    width: 90px; 
+    height: 90px; 
+    top: -25px; 
+    left: 70px; 
+}
+
+.cloud10 { 
+    top: 85%; 
+    left: 35%; 
+    width: 120px; 
+    height: 60px; 
+    animation-delay: 4.5s; 
+}
+
+.cloud10::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -20px; 
+    left: 20px; 
+}
+
+.cloud10::after  { 
+    width: 80px; 
+    height: 80px; 
+    top: -30px; 
+    left: 60px; 
+}
+    .profile-main {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      padding: 32px 16px 48px 16px;
+      /* background: rgba(255,255,255,0.7); */
+      border-radius: 32px;
+      /* box-shadow: 0 4px 32px #fbb1b1; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+      z-index: 1;
+    }
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .profile-pic-lg {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffd1e3;
+      /* box-shadow: 0 4px 24px #ffd1e3; */
+      background: #fff;
+    }
+    .profile-name-lg {
+      font-family: "Dancing Script", cursive;
+      font-size: 2.5rem;
+      color: #d16ba5;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .profile-zodiac-lg {
+      font-size: 1.1rem;
+      color: #a64d79;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .profile-details {
+      display: flex;
+      gap: 18px;
+      color: #a64d79;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .profile-bio-lg {
+      /* background: #ffeaf7; */
+      border-radius: 16px;
+      padding: 14px 18px;
+      color: #a64d79;
+      font-size: 1.05rem;
+      text-align: center;
+      margin-top: 10px;
+      max-width: 480px;
+      box-shadow: 0 2px 8px #ffd1e3;
+    }
+    .profile-sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      width: 100%;
+      margin-top: 24px;
+      justify-content: center;
+    }
+    .profile-section {
+      /* background: #fff6fa; */
+      border-radius: 24px;
+      box-shadow: 0 2px 12px #3d3a3a;
+      padding: 24px 28px;
+      min-width: 220px;
+      flex: 1 1 260px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .profile-section h3 {
+      font-family: "Dancing Script", cursive;
+      color: #d16ba5;
+      font-size: 1.3rem;
+      margin: 0 0 10px 0;
+      letter-spacing: 1px;
+    }
+    .profile-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: #a64d79;
+      font-size: 1.05rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    /* Cover Song Cards */
+    .cover-songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .cover-card {
+      background: #ffeaf7;
+      border-radius: 20px;
+      box-shadow: 0 2px 12px #ffd1e3;
+      padding: 18px 16px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .cover-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 24px #fbb1b1;
+    }
+    .cover-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 14px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px #ffd1e3;
+    }
+    .cover-card h4 {
+      font-family: "Dancing Script", cursive;
+      color: #a64d79;
+      font-size: 1.15rem;
+      margin: 0 0 4px 0;
+      text-align: center;
+    }
+    .cover-card p {
+      color: #d16ba5;
+      font-size: 1rem;
+      margin: 0 0 8px 0;
+      text-align: center;
+    }
+    .cover-card audio {
+      width: 100%;
+      outline: none;
+      margin-top: 6px;
+    }
+    .cover-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #fbb1b1;
+      color: #fff;
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      padding: 3px 10px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      box-shadow: 0 1px 4px #ffd1e3;
+    }
+    .edit-btn-lg {
+      margin-top: 18px;
+      background: #ffd1e3;
+      color: #a64d79;
+      border: none;
+      border-radius: 14px;
+      padding: 10px 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #fbb1b1;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-end;
+    }
+    .edit-btn-lg:hover {
+      background: #fbb1b1;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .profile-main {
+        padding: 18px 2vw 32px 2vw;
+      }
+      .profile-sections {
+        gap: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .profile-main {
+        padding: 8px 0 24px 0;
+      }
+      .profile-header {
+        gap: 10px;
+      }
+      .profile-pic-lg {
+        width: 80px;
+        height: 80px;
+      }
+      .profile-name-lg {
+        font-size: 1.3rem;
+      }
+      .profile-section {
+        padding: 12px 8px;
+      }
+      .cover-card img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+      <div id="background">
+        
+            <div class="star s1">✧</div>
+            <div class="star s2">✧</div>
+            <div class="star s3">✧</div>
+            <div class="star s4">✧</div>
+            <div class="star s5">✧</div>
+            <div class="star s6">✧</div>
+            <div class="star s7">✧</div>
+            <div class="star s8">✧</div>
+            <div class="star s9">✧</div>
+            <div class="star s10">✧</div>
+            <div class="star s11">✧</div>
+            <div class="star s12">✧</div>
+            <div class="star s13">✧</div>
+            <div class="star s14">✧</div>
+            <div class="star s15">✧</div>
+            <div class="star s16">✧</div>
+            <div class="star s17">✧</div>
+            <div class="star s18">✧</div>
+            <div class="star s19">✧</div>
+            <div class="star s20">✧</div>
+
+        <!-- Clouds -->
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <!-- <div class="cloud cloud4"></div> -->
+            <div class="cloud cloud5"></div>
+            <div class="cloud cloud6"></div>
+            <!-- <div class="cloud cloud7"></div> -->
+            <!-- <div class="cloud cloud8"></div> -->
+            <div class="cloud cloud9"></div>
+            <div class="cloud cloud10"></div>
+           
+        
+    </div>
+  <main class="profile-main">
+    <div class="profile-header">
+      <img src="img/profile.jpg" alt="Profile Picture" class="profile-pic-lg">
+      <h1 class="profile-name-lg">Eloise</h1>
+      <div class="profile-zodiac-lg">
+        <span>♒ Aquarius</span>
+        <span>| Age: 22</span>
+        <span>| ♀️ Female</span>
+      </div>
+      <div class="profile-details">
+        <span>Location: Cloud City</span>
+        <span>Looking for: Friendship & Love</span>
+      </div>
+      <div class="profile-bio-lg">
+        Dreamer, music lover, and cloud gazer. Looking for someone to share sunsets and playlists with!
+      </div>
+    </div>
+    <div class="profile-sections">
+      <section class="profile-section">
+        <h3>Hobbies</h3>
+        <ul class="profile-list">
+          <li>🎵 Singing</li>
+          <li>📚 Reading</li>
+          <li>🎨 Drawing</li>
+          <li>☁️ Cloud Watching</li>
+          <li>🏸 Badminton</li>
+        </ul>
+      </section>
+      <section class="profile-section">
+        <h3>Activities</h3>
+        <ul class="profile-list">
+          <li>Open mic nights</li>
+          <li>Art workshops</li>
+          <li>Book clubs</li>
+          <li>Nature walks</li>
+        </ul>
+      </section>
+    </div>
+    <section class="profile-section" style="width:100%;">
+      <h3>Favorite Songs</h3>
+      <div class="cover-songs-grid">
+        <div class="cover-card">
+          <!-- <span class="cover-badge">COVER</span> -->
+          <img src="img/stillwithyou.jpg" alt="Song Cover">
+          <h4>Still With You</h4>
+          <p>by Jungkook</p>
+          <audio controls>
+            <source src="mp3/stillwithyou.mp3" type="audio/mp3">
+            
+          </audio>
+        </div>
+        <div class="cover-card">
+          <!-- <span class="cover-badge">COVER</span> -->
+          <img src="img/yesorno.jpg" alt="Song Cover">
+          <h4>Please Don’t Change</h4>
+          <p>by Jungkook</p>
+          <audio controls>
+            <source src="mp3/pls.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <div class="cover-card">
+          <!-- <span class="cover-badge">COVER</span> -->
+          <img src="img/yesorno.jpg" alt="Song Cover">
+          <h4>Closer To You</h4>
+          <p>by Jungkook</p>
+          <audio controls>
+            <source src="mp3/yesorno.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <!-- Add more cover-card blocks as needed -->
+      </div>
+    </section>
+    <button class="edit-btn-lg"><i class="fa-solid fa-pen"></i> Edit Profile</button>
+    <a href="home.html" class="edit-btn-lg" style="text-decoration: none;"><i class="fa-solid fa-backward-step"></i>Back</a>
+  </main>
+</body>
+</html>

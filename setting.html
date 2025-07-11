@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus Drift</title>
+      <link rel="icon" type="image/webp" href="img/venusdrift.webp">
+
+    <style>
+body{
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #b0eff7, #f3c0d1);    
+    color: #2b2d42;
+}
+
+.setting{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;  
+}
+
+h1{
+    color: #4b5563;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2{
+    color: #ec4899;
+}
+
+ .setting-item:nth-last-of-type(1){
+    font-size: 3rem;
+
+
+}
+
+.setting-item{
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting-item label{
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.setting-item button{
+    background-color: #ec4899;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+
+.setting-item button:hover{
+   background-color: #db2777;
+}
+
+.setting-item .delete-account-btn{
+    background-color: #ec4899;
+    transform: translateX(670px);
+}
+
+.setting-item .delete-account-btn:hover{
+    background: #db2777;
+}
+
+.setting-item input[type="email"],
+.setting-item input[type="password"] {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.switch-item {
+    color: #4b5563;
+    justify-content: space-between;
+    display: flex;
+}
+
+.switch {   
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: oklch(0.901 0.058 230.902);
+  transition: .4s;
+  transition: .4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: oklch(0.746 0.16 232.661);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px oklch(0.746 0.16 232.661);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+  transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+.view-list{
+    color: #fff;
+    background-color: #ec4899;
+    width: 80px;
+    padding: 5px 3px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.view-list:hover{
+    cursor: pointer;
+    background: #db2777;
+}
+
+.logout-btn button, a{
+    padding: 5px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ec4899;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout-btn button:hover{
+    cursor: pointer;
+    background: #db2777;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Account Setting -->
+
+<main class="setting">
+    <div>
+    <h1>Settings</h1>
+    <section class="setting-section">
+        <h2>Accounts</h2>
+        <div class="setting-item">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" value="example@gmail.com">
+            <button class="edit-btn">Edit</button>
+        </div>
+
+        <br/>
+
+        <div class="setting-item">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <button class="edit-btn">Reset</button>
+        </div>
+
+        <br>
+
+        <div class="setting-item">
+            <button class="delete-account-btn">Delete Account</button>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Notification Settings -->
+   
+    <section>
+        <div>
+            <h2>Notification</h2>
+            <div class="switch-item">
+                <label for="notif-btn">Notification</label>
+                <label class="switch">
+                    <input type="checkbox" id="notif-btn" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="switch-item">
+                <label for="notif-sound">Notification Sound</label>
+                <label class="switch">
+                    <input type="checkbox" id="notif-sound" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <br>
+
+        <div class="switch-item">
+            <label for="new-match-notif">New Match Notification</label>
+            <label class="switch">
+                <input type="checkbox" id="new-match-notif" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <br>
+        
+        <div class="switch-item">
+            <label for="new-message-notif">New Message Notification</label>
+            <label class="switch">
+                <input type="checkbox" id="new-message-notif" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="switch-item">
+            <label for="promotional-emails">Promotional Emails</label>
+            <label class="switch">
+                <input type="checkbox" id="promotional-emails">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Privacy Settings -->
+
+    <section>
+            <h2>Privacy</h2>
+            <div class="switch-item">
+            <label for="profile-visibility">Profile Visibility</label>
+            <label class="switch">
+                <input type="checkbox" id="profile-visibility" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="switch-item">
+            <label for="read-receipts">Read Receipts</label>
+            <label class="switch">
+                <input type="checkbox" id="read-receipts" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="blocked-users">Blocked User</label>
+            <button class="view-list">View List</button>
+        </div>
+
+        <br>
+
+        <div class="logout-btn">
+            <a href="home.html">Back</a>
+            <button>Log Out</button>
+            
+        </div>
+    </section>
+</div>
+</main>
+
+</body>
+</html>

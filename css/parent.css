@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Petit+Formal+Script&family=Sevillana&display=swap');
+body{
+     font-family: "Petit Formal Script", cursive;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#background {
+
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #738fbd, #a8c3d4, #dbd6df, #eec6c7, #db88a4, #cc8eb1 );
+}
+
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    animation: twinkle 2s infinite ease-in-out;
+    opacity: 0.7;
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+}
+
+.s1  { 
+    top: 10%;  
+    left: 20%; 
+    animation-delay: 0s; 
+}
+.s2  { 
+    top: 25%;  
+    left: 40%; 
+    animation-delay: 0.3s; 
+}
+.s3  { 
+    top: 35%;  
+    left: 75%; 
+    animation-delay: 0.5s; 
+}
+.s4  { 
+    top: 60%;  
+    left: 30%; 
+    animation-delay: 0.7s; 
+}
+.s5  { 
+    top: 80%;  
+    left: 50%; 
+    animation-delay: 1s; 
+}
+.s6  { 
+    top: 15%;  
+    left: 60%; 
+    animation-delay: 1.3s; 
+}
+.s7  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 1.6s; 
+}
+.s8  { 
+    top: 55%;  
+    left: 10%; 
+    animation-delay: 1.9s; 
+}
+.s9  { 
+    top: 75%;  
+    left: 80%; 
+    animation-delay: 2.2s; 
+}
+.s10 { 
+    top: 5%;   
+    left: 50%; 
+  animation-delay: 2.5s; 
+}
+.s11  { 
+    top: 20%;  
+    left: 30%; 
+    animation-delay: 0s; 
+}
+.s12  { 
+    top: 35%;  
+    left: 50%; 
+    animation-delay: 0.3s; 
+}
+.s13  { 
+    top: 45%;  
+    left: 85%; 
+    animation-delay: 0.5s; 
+}
+.s14  { 
+    top: 70%;  
+    left: 40%; 
+    animation-delay: 0.7s; 
+}
+.s15  { 
+    top: 90%;  
+    left: 60%; 
+    animation-delay: 1s; 
+}
+.s16  { 
+    top: 25%;  
+    left: 70%; 
+    animation-delay: 1.3s; 
+}
+.s17  { 
+    top: 55%;  
+    left: 95%; 
+    animation-delay: 1.6s; 
+}
+.s18  { 
+    top: 65%;  
+    left: 20%; 
+    animation-delay: 1.9s; 
+}
+.s19  { 
+    top: 85%;  
+    left: 90%; 
+    animation-delay: 2.2s; 
+}
+.s20 { 
+    top: 10%;   
+    left: 60%; 
+    animation-delay: 2.5s; 
+}
+
+  /* ☁️ Clouds */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    opacity: 0.8;
+    animation: shakeCloud 6s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+@keyframes shakeCloud {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+}
+
+  /* Cloud styles */
+.cloud1 { 
+    top: 15%; 
+    left: 10%; 
+    width: 120px; 
+    height: 60px; 
+    animation-delay: 0s; 
+}
+.cloud1::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -20px; 
+    left: 20px; 
+}
+.cloud1::after  { 
+    width: 80px; 
+    height: 80px; 
+    top: -30px; 
+    left: 60px; 
+}
+
+
+
+
+.cloud3 { 
+    top: 15%; 
+    left: 75%; 
+    width: 130px; 
+    height: 65px; 
+    animation-delay: 1s; 
+}
+.cloud3::before { 
+    width: 60px; 
+    height: 60px; 
+    top: -15px; 
+    left: 25px; 
+}
+.cloud3::after  { 
+    width: 85px; 
+    height: 85px; 
+    top: -25px; 
+    left: 65px; 
+}
+
+
+  /* Content container on top */
+#container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container .title{
+    width: 75%;
+    height: 15vh;
+
+
+    display: flex;
+    align-items: center;
+}
+
+#container .title img {
+    width: 100px;
+    height: 100px;
+}
+
+#container .title h1 {
+    font-family: "Petit Formal Script", cursive;
+    font-weight: bold;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    font-size: 2rem;
+    color: #e388a8;
+}
+
+#container .cloudRealm{
+    width: 80%;
+    height: 40vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#container #cloudRealm{
+  width: 650px;
+}
+
+#container .cloudRealm .cloudRealm1{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+#container .cloudRealm .cloudRealm1:hover, .cloudRealm2:hover{
+    z-index: 2; /* ensures it appears above others */   
+  transform: scale(1.1);
+  transition: all 0.5s ease-in;
+}
+
+#container .cloudRealm .cloudRealm1 img, .cloudRealm2 img{
+    height: 250px;
+    position: relative;
+    animation: shakeCloud 4s ease-in-out infinite;
+}
+
+#container .cloudRealm .cloudRealm1 img:hover{
+    cursor: pointer;
+}
+
+#container .cloudRealm .cloudRealm1 h1, .cloudRealm2 h1{
+    width: 100px;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-family: "Petit Formal Script", cursive;
+    font-size: 1.2rem;
+    color: #738fbd;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    animation: shakeCloud 4s ease-in-out infinite;
+}
+
+#container .cloudRealm #cloud1 h1{
+  margin-top: 10px;
+}
+
+#container .cloudRealm #cloud2 h1{
+    color: #db88a4;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#container .cloudRealm #cloud3 h1{
+    color: #77b067;
+    margin-top: 10px;
+}
+
+#container .cloudRealm #cloud4 h1{
+  color: #9da559;
+  margin-top: 10px;
+}
+
+#container .cloudRealm #cloud5 h1{
+  color: #b973bd;
+  margin-top: 10px;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar .starTwink {
+    color: #738fbd;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star02{
+  color: #db88a4;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star03{
+  color: #a7ec94;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star04{
+  color: #dce78b;
+}
+
+#container .cloudRealm .cloudRealm1 .appearstar #star05{
+  color: #b973bd;
+}
+
+/* #container .cloudRealm .cloudRealm1 img:hover .appearstar .starTwink {
+  transform: translate(45deg) scale(4);
+  opacity: 1;
+} */
+
+/* .starTwink:nth-child(1) { 
+    top: 35%; 
+    left: 45%; 
+  } */
+.starTwink:nth-child(1) { 
+    top: 25%; 
+    left: 50%; 
+  }
+.starTwink:nth-child(2) { 
+    top: 22%; 
+    left: 55%; 
+  }
+.starTwink:nth-child(3) { 
+    top: 25%; 
+    left: 60%; 
+  }
+.starTwink:nth-child(4) { 
+    top: 23%; 
+    left: 65%; 
+  }
+.starTwink:nth-child(5) { 
+    top: 25%; 
+    left: 70%; 
+  }
+
+.cloudRealm1:hover .starTwink {
+  animation: sparkle 2s ease forwards;
+  opacity: 1;
+  color: #db88a4;
+}
+
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+a:hover, h1:hover{
+    cursor: pointer;
+}
+
+/* ...existing styles... */
+
+/* Responsive styles for tablet and mobile */
+@media (max-width: 1024px) {
+  #container .title {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+  #container .title img {
+    width: 70px;
+    height: 70px;
+  }
+  #container .title h1 {
+    font-size: 1.3rem;
+  }
+  #container .cloudRealm {
+    width: 98%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  #container .cloudRealm .cloudRealm1 {
+    width: 220px;
+    height: 220px;
+  }
+  #container .cloudRealm .cloudRealm1 img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 700px) {
+  #container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-right: 50px;
+    height: auto;
+    min-height: 100vh;
+  }
+  #container .title {
+    flex-direction: column;
+    width: 50%;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  #container .title img {
+    width: 50px;
+    height: 50px;
+  }
+  #container .title h1 {
+    font-size: 1rem;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  }
+  #container .cloudRealm {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    gap: 18px;
+  }
+  #container .cloudRealm .cloudRealm1 {
+    width: 90vw;
+    max-width: 320px;
+    height: 140px;
+    margin-bottom: 16px;
+  }
+  #container .cloudRealm .cloudRealm1 img {
+    height: 150px;
+    margin-right: 50px;
+  }
+  #container .cloudRealm .cloudRealm1 h1 {
+    font-size: 1rem;
+    left: 22%;
+    top: 35%;
+    font-size: 1rem;
+  }
+  .starTwink {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+
+/* @media (max-width: 700px) {
+  .cloud, .cloud1, .cloud3 {
+    width: 60px !important;
+    height: 30px !important;
+    min-width: 40px;
+    min-height: 20px;
+  }
+  .star {
+    font-size: 10px !important;
+  }
+} */
